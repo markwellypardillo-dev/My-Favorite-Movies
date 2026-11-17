@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --color-canvas: #050505;
+    --color-surface: #0F0F13;
+    --color-crimson: #E11D48;
+    --color-crimson-bright: #FF2E55;
+    --color-white: #FFFFFF;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    background-color: #050505;
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body,
+  #root {
+    background-color: #050505;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    position: relative;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.font-serif-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-sans-ui {
+  font-family: var(--font-sans);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Strict Borderless Multi-Layered Ambient Shadow System */
+.shadow-cinema-rest {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 20px 42px -12px rgba(0, 0, 0, 0.94), 0 4px 14px rgba(0, 0, 0, 0.72);
+}
+
+.shadow-cinema-hover {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 28px 58px -10px rgba(0, 0, 0, 0.98), 0 12px 36px -8px rgba(225, 29, 72, 0.35);
+}
+
+.shadow-cinema-modal {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 40px 90px -12px rgba(0, 0, 0, 0.98), 0 18px 48px -8px rgba(225, 29, 72, 0.24);
+}
+
+.shadow-cinema-nav {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 22px 50px -10px rgba(0, 0, 0, 0.95), 0 6px 20px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+.shadow-amber-glow {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 12px 32px -4px rgba(225, 29, 72, 0.52), 0 4px 14px rgba(0, 0, 0, 0.78);
+}
+
+.surface-champagne-luxury {
+  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 52%, #BE123C 100%);
+  color: #FFFFFF;
+  border: none !important;
+}
+
+.surface-champagne-luxury:hover {
+  background: linear-gradient(135deg, #FB7185 0%, #F43F5E 48%, #E11D48 100%);
+  color: #FFFFFF;
+}
+
+.surface-velvet-glass {
+  background-color: rgba(15, 15, 19, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: none !important;
+}
+
+.surface-velvet-solid {
+  background-color: #0F0F13;
+  border: none !important;
+}
+
+/* Theatrical Overhead Spotlight & Backlight System */
+.cinema-overhead-spotlight {
+  background: radial-gradient(
+    ellipse 62% 55% at 42% 0%,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(225, 29, 72, 0.16) 36%,
+    rgba(5, 5, 5, 0) 75%
+  );
+}
+
+.cinema-stage-backlight {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(225, 29, 72, 0.34) 34%,
+    rgba(190, 18, 60, 0.14) 58%,
+    rgba(5, 5, 5, 0) 76%
+  );
+}
+
+/* Poster zoom cubic-bezier(0.22, 1, 0.36, 1) */
+.poster-zoom-transition {
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1), filter 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Bidirectional Scroll Reveal Transitions */
+.scroll-reveal-item {
+  transition: opacity 550ms cubic-bezier(0.22, 1, 0.36, 1), transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18181E;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(225, 29, 72, 0.75);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster-zoom-transition,
+  .scroll-reveal-item {
+    transition: none !important;
+    transform: none !important;
+  }
+}

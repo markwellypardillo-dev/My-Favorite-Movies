@@ -1,0 +1,8 @@
+{
+  "name": "The Pardillo Archive",
+  "description": "A personal curated cinema showcase and interactive film archive curated by Mark Welly Pardillo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
